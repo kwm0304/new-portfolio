@@ -8,8 +8,23 @@ import sfc from '../assets/sfc.png'
 import { BsStripe } from 'react-icons/bs'
 import Resume from './Resume'
 import Footer from './Footer'
+import { useState } from 'react'
 
-const BackgroundAnimation = () => (
+const BackgroundAnimation = () => { 
+  const [showDialog1, setShowDialog1] = useState(false);
+  const [showDialog2, setShowDialog2] = useState(false);
+  const [showDialog3, setShowDialog3] = useState(false);
+  const [showDialog4, setShowDialog4] = useState(false);
+
+  const toggleDialog1 = () => setShowDialog1(!showDialog1);
+  const toggleDialog2 = () => setShowDialog2(!showDialog2);
+  const toggleDialog3 = () => setShowDialog3(!showDialog3);
+  const toggleDialog4 = () => setShowDialog4(!showDialog4);
+
+return(
+  
+
+
   <div className="relative">
     <div className='absolute left-0 top-0 z-10'>
       
@@ -31,7 +46,7 @@ const BackgroundAnimation = () => (
   <h2 className='text-center text-red-500 text-3xl border-b-8 border-yellow-400 font-bold'>Technologies</h2>
 </div>
 
-    <div className="grid w-1/2  xs:grid-cols-2 xs:text-center xs:w-[90%] xs:mx-auto xs:border-4 xs:justify-self-center grid-cols-1 mx-auto justify-center items-center border-8 gap-y-8 border-red-500 rounded-lg mx-12 bg-cyan-600 bg-opacity-50 py-6">
+    <div className="grid w-1/2 divide-x-2 divide-solid divide-yellow-400 xs:grid-cols-2 xs:text-center xs:w-[90%] xs:mx-auto xs:border-4 xs:justify-self-center grid-cols-1 mx-auto justify-center items-center border-8 gap-y-8 border-red-500 rounded-lg mx-12 bg-cyan-600 bg-opacity-50 py-6">
       
         
         <div className="flex items-center justify-center gap-4 text-yellow-400 xs:flex-col sm:flex-row">
@@ -61,7 +76,7 @@ const BackgroundAnimation = () => (
           <p className='text-cyan-400'>Next</p>
           </div>
         </div>
-        <div className="flex items-center justify-center gap-4 text-yellow-400 xs:flex-col sm:flex-row">
+        <div className="flex items-center justify-center gap-4 text-yellow-400 xs:flex-col sm:flex-row md:mx-4">
         <h4 className='text-red-500 text-2xl pr-8 font-bold'>Back End</h4>
         <div className="flex flex-col items-center text-center">
         <SiNodedotjs className='text-4xl'/>
@@ -98,7 +113,7 @@ const BackgroundAnimation = () => (
         <div className="card border-4 border-solid border-red-500 rounded-lg w-96 ">
           <h5 className='text-center text-red-500 font-bold border-b-4 border-solid border-yellow-400 mx-4 pt-4 text-2xl'>McKenzie Transport</h5>
           <div className="grid ">
-          <img src={mckhome} className='w-full py-4 h-[550px]'/>
+          <img src={mckhome} className='w-full my-4 h-[550px] border-y-4 border-solid border-red-500'/>
 
           </div>
           <div className="flex text-cyan-400 font-bold text-center divide-x-2 divide-solid divide-yellow-400">
@@ -106,9 +121,26 @@ const BackgroundAnimation = () => (
           <a className='w-5/6' href='https://github.com/kwm0304/transport' target='_blank' rel='noreferrer'>SOURCE</a>
           </div>
           <div className="flex justify-center pt-4">
-          <button className='text-cyan-400 font-bold uppercase border-2 border-solid border-yellow-400 px-2 py-1 rounded hover:scale-110'>Summary</button>
-
+          <button 
+          className='text-cyan-400 font-bold uppercase border-2 border-solid border-yellow-400 px-2 py-1 rounded hover:scale-110'
+          onClick={toggleDialog1}
+          >Summary</button>
           </div>
+          {showDialog1 && (
+            <dialog open className='dialog'>
+              <h2>Summary</h2>
+              <p>this is a summary</p>
+              <h2>Features</h2>
+              <button onClick={toggleDialog1}>Close</button>
+              <li>
+                <ul>Feature 1</ul>
+                <ul>Feature 2</ul>
+                <ul>Feature 3</ul>
+                <ul>Feature 4</ul>
+                <ul>Feature 5</ul>
+              </li>
+            </dialog>
+          )}
           <div className="flex items-center justify-center py-4 gap-4">
             <SiJavascript className='text-3xl text-yellow-400'/>
             <SiReact className='text-3xl text-yellow-400'/>
@@ -120,7 +152,7 @@ const BackgroundAnimation = () => (
         <div className="card border-4 border-solid border-red-500 rounded-lg w-96">
         <h5 className='text-center text-red-500 font-bold border-b-4 border-solid border-yellow-400 mx-4 pt-4 text-2xl'>E-Commerce</h5>
           <div className="grid ">
-          <img src={shop} className='w-full py-4 h-[550px]'/>
+          <img src={shop} className='w-full my-4 h-[550px] border-y-4 border-solid border-red-500'/>
 
           </div>
           <div className="flex text-cyan-400 font-bold text-center divide-x-2 divide-solid divide-yellow-400">
@@ -128,9 +160,27 @@ const BackgroundAnimation = () => (
           <a className='w-5/6' href='https://github.com/kwm0304/shop-shop' target='_blank' rel='noreferrer'>SOURCE</a>
           </div>
           <div className="flex justify-center pt-4">
-          <button className='text-cyan-400 font-bold uppercase border-2 border-solid border-yellow-400 px-2 py-1 rounded hover:scale-110'>Summary</button>
+          <button 
+          className='text-cyan-400 font-bold uppercase border-2 border-solid border-yellow-400 px-2 py-1 rounded hover:scale-110'
+          onClick={toggleDialog2}
+          >Summary</button>
 
           </div>
+          {showDialog2 && (
+            <dialog open className='dialog'>
+              <h2>Summary2</h2>
+              <p>this is a summary</p>
+              <h2>Features</h2>
+              <button onClick={toggleDialog2}>Close</button>
+              <li>
+                <ul>Feature 1</ul>
+                <ul>Feature 2</ul>
+                <ul>Feature 3</ul>
+                <ul>Feature 4</ul>
+                <ul>Feature 5</ul>
+              </li>
+            </dialog>
+          )}
           <div className="flex items-center justify-center py-4 gap-4">
             <SiJavascript className='text-3xl text-yellow-400'/>
             <SiReact className='text-3xl text-yellow-400'/>
@@ -146,7 +196,7 @@ const BackgroundAnimation = () => (
         <div className="card border-4 border-solid border-red-500 rounded-lg w-96 ">
           <h5 className='text-center text-red-500 font-bold border-b-4 border-solid border-yellow-400 mx-4 pt-4 text-2xl'>SideFx</h5>
           <div className="grid ">
-          <img src={sideFx} className='w-full py-4 h-[550px]'/>
+          <img src={sideFx} className='w-full my-4 h-[550px] border-y-4 border-solid border-red-500'/>
 
           </div>
           <div className="flex text-cyan-400 font-bold text-center divide-x-2 divide-solid divide-yellow-400">
@@ -154,9 +204,26 @@ const BackgroundAnimation = () => (
           <a className='w-5/6' href='https://github.com/kwm0304/transport' target='_blank' rel='noreferrer'>SOURCE</a>
           </div>
           <div className="flex justify-center pt-4">
-          <button className='text-cyan-400 font-bold uppercase border-2 border-solid border-yellow-400 px-2 py-1 rounded hover:scale-110'>Summary</button>
-
+          <button 
+          className='text-cyan-400 font-bold uppercase border-2 border-solid border-yellow-400 px-2 py-1 rounded hover:scale-110'
+          onClick={toggleDialog3}
+          >Summary</button>
           </div>
+          {showDialog3 && (
+            <dialog open className='dialog'>
+              <h2>Summary3</h2>
+              <p>this is a summary</p>
+              <h2>Features</h2>
+              <button onClick={toggleDialog3}>Close</button>
+              <li>
+                <ul>Feature 1</ul>
+                <ul>Feature 2</ul>
+                <ul>Feature 3</ul>
+                <ul>Feature 4</ul>
+                <ul>Feature 5</ul>
+              </li>
+            </dialog>
+          )}
           <div className="flex items-center justify-center py-4 gap-4">
             <SiJavascript className='text-3xl text-yellow-400'/>
             <SiReact className='text-3xl text-yellow-400'/>
@@ -166,7 +233,7 @@ const BackgroundAnimation = () => (
         <div className="card border-4 border-solid border-red-500 rounded-lg w-96">
         <h5 className='text-center text-red-500 font-bold border-b-4 border-solid border-yellow-400 mx-4 pt-4 text-2xl'>Soles-For-Christ</h5>
           <div className="grid ">
-          <img src={sfc} className='w-full py-4 h-[550px]'/>
+          <img src={sfc} className='w-full my-4 h-[550px] border-y-4 border-solid border-red-500'/>
 
           </div>
           <div className="flex text-cyan-400 font-bold text-center divide-x-2 divide-solid divide-yellow-400">
@@ -174,9 +241,26 @@ const BackgroundAnimation = () => (
           <a className='w-5/6' href='https://github.com/kwm0304/sfc' target='_blank' rel='noreferrer'>SOURCE</a>
           </div>
           <div className="flex justify-center pt-4">
-          <button className='text-cyan-400 font-bold uppercase border-2 border-solid border-yellow-400 px-2 py-1 rounded hover:scale-110'>Summary</button>
-
+          <button 
+          className='text-cyan-400 font-bold uppercase border-2 border-solid border-yellow-400 px-2 py-1 rounded hover:scale-110'
+          onClick={toggleDialog4}
+          >Summary</button>
           </div>
+          {showDialog4 && (
+            <dialog open className='dialog'>
+              <h2>Summary</h2>
+              <p>this is a summary</p>
+              <h2>Features</h2>
+              <button onClick={toggleDialog4}>Close</button>
+              <li>
+                <ul>Feature 1</ul>
+                <ul>Feature 2</ul>
+                <ul>Feature 3</ul>
+                <ul>Feature 4</ul>
+                <ul>Feature 5</ul>
+              </li>
+            </dialog>
+          )}
           <div className="flex items-center justify-center py-4 gap-4">
             <SiJavascript className='text-3xl text-yellow-400'/>
             <SiReact className='text-3xl text-yellow-400'/>
@@ -551,5 +635,5 @@ const BackgroundAnimation = () => (
     </svg>
   </div>
 );
-
+}
 export default BackgroundAnimation;
