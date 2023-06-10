@@ -1,10 +1,19 @@
 import me from '../assets/me.jpg'
 import { SiJavascript, SiExpress, SiReact, SiNodedotjs, SiMongodb, SiGraphql, SiApollographql, SiHandlebarsdotjs, SiTailwindcss, SiBootstrap, SiMysql  } from 'react-icons/si'
 import { TbBrandNextjs } from 'react-icons/tb'
+import { BsThreeDots } from 'react-icons/bs'
+import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai'
 import mckhome from '../assets/mckhome.png'
+import mck2 from '../assets/mck2.png'
+import mck3 from '../assets/mck3.png'
 import shop from '../assets/shop.png'
+import shop2 from '../assets/shop2.png'
+import shop4 from '../assets/shop4.png'
 import sideFx from '../assets/sideFx.png'
+import sfx2 from '../assets/sfx2.png'
 import sfc from '../assets/sfc.png'
+import sfc2 from '../assets/sfc2.png'
+import sfc3 from '../assets/sfc3.png'
 import { BsStripe } from 'react-icons/bs'
 import Resume from './Resume'
 import Footer from './Footer'
@@ -15,7 +24,26 @@ const BackgroundAnimation = () => {
   const [showDialog2, setShowDialog2] = useState(false);
   const [showDialog3, setShowDialog3] = useState(false);
   const [showDialog4, setShowDialog4] = useState(false);
+  const  [currentIndex1, setCurrentIndex1] = useState(0);
+  const  [currentIndex2, setCurrentIndex2] = useState(0);
+  const  [currentIndex3, setCurrentIndex3] = useState(0);
+  const  [currentIndex4, setCurrentIndex4] = useState(0);
 
+  const slides1 = [mckhome, mck2, mck3]
+  const slides2 = [shop, shop2, shop4]
+  const slides3 = [sideFx, sfx2]
+  const slides4 = [sfc, sfc2, sfc3 ]
+
+  const navigateSlide = (direction, currentIndex, setCurrentIndex, slides) => {
+    const lastIndex = slides.length - 1;
+    let newIndex = currentIndex + direction;
+    if (newIndex < 0) {
+      newIndex = lastIndex
+    } else if (newIndex > lastIndex) {
+      newIndex = 0
+    }
+    setCurrentIndex(newIndex)
+  }
   const toggleDialog1 = () => setShowDialog1(!showDialog1);
   const toggleDialog2 = () => setShowDialog2(!showDialog2);
   const toggleDialog3 = () => setShowDialog3(!showDialog3);
@@ -112,10 +140,29 @@ return(
       <div className="flex flex-col gap-y-12 justify-self-center">
         <div className="card border-4 border-solid border-red-500 rounded-lg w-96 ">
           <h5 className='text-center text-red-500 font-bold border-b-4 border-solid border-yellow-400 mx-4 pt-4 text-2xl'>McKenzie Transport</h5>
+          <div className="flex justify-between pt-4">
+        <button
+        className='text-yellow-400 text-3xl'
+          onClick={() =>
+            navigateSlide(-1, currentIndex1, setCurrentIndex1, slides1)
+          }
+        >
+          <AiFillCaretLeft />
+        </button>
+        <button
+        className='text-yellow-400 text-3xl'
+          onClick={() =>
+            navigateSlide(1, currentIndex1, setCurrentIndex1, slides1)
+          }
+        >
+          <AiFillCaretRight />
+        </button>
+      </div>
           <div className="grid ">
-          <img src={mckhome} className='w-full my-4 h-[550px] border-y-4 border-solid border-red-500'/>
+          <img src={slides1[currentIndex1]} className='w-full my-4 h-[550px] border-y-4 border-solid border-red-500'/>
 
           </div>
+         
           <div className="flex text-cyan-400 font-bold text-center divide-x-2 divide-solid divide-yellow-400">
           <a className='w-5/6' href='https://mcktransport.herokuapp.com/' target='_blank' rel='noreferrer'>VISIT</a>
           <a className='w-5/6' href='https://github.com/kwm0304/transport' target='_blank' rel='noreferrer'>SOURCE</a>
@@ -127,11 +174,12 @@ return(
           >Summary</button>
           </div>
           {showDialog1 && (
-            <dialog open className='dialog'>
-              <h2>Summary</h2>
+            <div className="fixed inset-0 flex items-center justify-center z-50">
+              <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
+            <dialog open className='dialog w-[80vw] h-[80vh]'>
+              <h2 className='text-center text-red-500 font-bold text-2xl'>Summary</h2>
               <p>this is a summary</p>
               <h2>Features</h2>
-              <button onClick={toggleDialog1}>Close</button>
               <li>
                 <ul>Feature 1</ul>
                 <ul>Feature 2</ul>
@@ -139,7 +187,11 @@ return(
                 <ul>Feature 4</ul>
                 <ul>Feature 5</ul>
               </li>
+              <div className="flex justify-center">
+              <button onClick={toggleDialog1} className='bg-[#094074] text-cyan-400 border-2 border-solid border-yellow-400 rounded-lg px-2 py-1'>Close</button>
+              </div>
             </dialog>
+            </div>
           )}
           <div className="flex items-center justify-center py-4 gap-4">
             <SiJavascript className='text-3xl text-yellow-400'/>
@@ -151,10 +203,30 @@ return(
         </div>
         <div className="card border-4 border-solid border-red-500 rounded-lg w-96">
         <h5 className='text-center text-red-500 font-bold border-b-4 border-solid border-yellow-400 mx-4 pt-4 text-2xl'>E-Commerce</h5>
+        <div className="flex justify-between pt-4">
+        <button
+        className='text-yellow-400 text-3xl'
+          onClick={() =>
+            navigateSlide(-1, currentIndex2, setCurrentIndex2, slides2)
+          }
+        >
+          <AiFillCaretLeft />
+        </button>
+        <button
+        className='text-yellow-400 text-3xl'
+          onClick={() =>
+            navigateSlide(1, currentIndex2, setCurrentIndex2, slides2)
+          }
+        >
+          <AiFillCaretRight />
+        </button>
+      </div>
           <div className="grid ">
-          <img src={shop} className='w-full my-4 h-[550px] border-y-4 border-solid border-red-500'/>
+          <img src={slides2[currentIndex2]} className='w-full my-4 h-[550px] border-y-4 border-solid border-red-500'/>
 
           </div>
+          
+          
           <div className="flex text-cyan-400 font-bold text-center divide-x-2 divide-solid divide-yellow-400">
           <a className='w-5/6' href='https://shop-shop-ecomm.herokuapp.com/' target='_blank' rel='noreferrer'>VISIT</a>
           <a className='w-5/6' href='https://github.com/kwm0304/shop-shop' target='_blank' rel='noreferrer'>SOURCE</a>
@@ -167,11 +239,12 @@ return(
 
           </div>
           {showDialog2 && (
-            <dialog open className='dialog'>
-              <h2>Summary2</h2>
+            <div className="fixed inset-0 flex items-center justify-center z-50">
+              <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
+            <dialog open className='dialog w-[80vw] h-[80vh]'>
+              <h2 className='text-center text-red-500 font-bold text-2xl'>Summary2</h2>
               <p>this is a summary</p>
               <h2>Features</h2>
-              <button onClick={toggleDialog2}>Close</button>
               <li>
                 <ul>Feature 1</ul>
                 <ul>Feature 2</ul>
@@ -179,7 +252,11 @@ return(
                 <ul>Feature 4</ul>
                 <ul>Feature 5</ul>
               </li>
+              <div className="flex justify-center">
+              <button onClick={toggleDialog2} className='bg-[#094074] text-cyan-400 border-2 border-solid border-yellow-400 rounded-lg px-2 py-1'>Close</button>
+              </div>
             </dialog>
+            </div>
           )}
           <div className="flex items-center justify-center py-4 gap-4">
             <SiJavascript className='text-3xl text-yellow-400'/>
@@ -195,10 +272,29 @@ return(
       <div className="flex flex-col gap-y-12 justify-self-center">
         <div className="card border-4 border-solid border-red-500 rounded-lg w-96 ">
           <h5 className='text-center text-red-500 font-bold border-b-4 border-solid border-yellow-400 mx-4 pt-4 text-2xl'>SideFx</h5>
+          <div className="flex justify-between pt-4">
+        <button
+        className='text-yellow-400 text-3xl'
+          onClick={() =>
+            navigateSlide(-1, currentIndex3, setCurrentIndex3, slides3)
+          }
+        >
+          <AiFillCaretLeft />
+        </button>
+        <button
+        className='text-yellow-400 text-3xl'
+          onClick={() =>
+            navigateSlide(1, currentIndex3, setCurrentIndex3, slides3)
+          }
+        >
+          <AiFillCaretRight />
+        </button>
+      </div>
           <div className="grid ">
-          <img src={sideFx} className='w-full my-4 h-[550px] border-y-4 border-solid border-red-500'/>
+          <img src={slides3[currentIndex3]} className='w-full my-4 h-[550px] border-y-4 border-solid border-red-500'/>
 
           </div>
+          
           <div className="flex text-cyan-400 font-bold text-center divide-x-2 divide-solid divide-yellow-400">
           <a className='w-5/6' href='https://mcktransport.herokuapp.com/' target='_blank' rel='noreferrer'>VISIT</a>
           <a className='w-5/6' href='https://github.com/kwm0304/transport' target='_blank' rel='noreferrer'>SOURCE</a>
@@ -210,11 +306,12 @@ return(
           >Summary</button>
           </div>
           {showDialog3 && (
-            <dialog open className='dialog'>
-              <h2>Summary3</h2>
+            <div className="fixed inset-0 flex items-center justify-center z-50">
+              <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
+            <dialog open className='dialog w-[80vw] h-[80vh]'>
+              <h2 className='text-center text-red-500 font-bold text-2xl'>Summary3</h2>
               <p>this is a summary</p>
               <h2>Features</h2>
-              <button onClick={toggleDialog3}>Close</button>
               <li>
                 <ul>Feature 1</ul>
                 <ul>Feature 2</ul>
@@ -222,7 +319,11 @@ return(
                 <ul>Feature 4</ul>
                 <ul>Feature 5</ul>
               </li>
+              <div className="flex justify-center">
+              <button onClick={toggleDialog3} className='bg-[#094074] text-cyan-400 border-2 border-solid border-yellow-400 rounded-lg px-2 py-1'>Close</button>
+              </div>
             </dialog>
+            </div>
           )}
           <div className="flex items-center justify-center py-4 gap-4">
             <SiJavascript className='text-3xl text-yellow-400'/>
@@ -232,10 +333,29 @@ return(
         </div>
         <div className="card border-4 border-solid border-red-500 rounded-lg w-96">
         <h5 className='text-center text-red-500 font-bold border-b-4 border-solid border-yellow-400 mx-4 pt-4 text-2xl'>Soles-For-Christ</h5>
+        <div className="flex justify-between pt-4">
+        <button
+        className='text-yellow-400 text-3xl'
+          onClick={() =>
+            navigateSlide(-1, currentIndex4, setCurrentIndex4, slides4)
+          }
+        >
+          <AiFillCaretLeft />
+        </button>
+        <button
+        className='text-yellow-400 text-3xl'
+          onClick={() =>
+            navigateSlide(1, currentIndex4, setCurrentIndex4, slides4)
+          }
+        >
+          <AiFillCaretRight />
+        </button>
+      </div>
           <div className="grid ">
-          <img src={sfc} className='w-full my-4 h-[550px] border-y-4 border-solid border-red-500'/>
+          <img src={slides4[currentIndex4]} className='w-full my-4 h-[550px] border-y-4 border-solid border-red-500'/>
 
           </div>
+          
           <div className="flex text-cyan-400 font-bold text-center divide-x-2 divide-solid divide-yellow-400">
           <a className='w-5/6' href='https://soles-for-christ.com/' target='_blank' rel='noreferrer'>VISIT</a>
           <a className='w-5/6' href='https://github.com/kwm0304/sfc' target='_blank' rel='noreferrer'>SOURCE</a>
@@ -247,19 +367,24 @@ return(
           >Summary</button>
           </div>
           {showDialog4 && (
-            <dialog open className='dialog'>
-              <h2>Summary</h2>
+            <div className="fixed inset-0 flex items-center justify-center z-50">
+              <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
+            <dialog open className='dialog w-[80vw] h-[80vh]'>
+              <h2 className='text-center text-red-500 font-bold text-2xl'>Summary4</h2>
               <p>this is a summary</p>
               <h2>Features</h2>
-              <button onClick={toggleDialog4}>Close</button>
-              <li>
+              <li className='decoration-none'>
                 <ul>Feature 1</ul>
                 <ul>Feature 2</ul>
                 <ul>Feature 3</ul>
                 <ul>Feature 4</ul>
                 <ul>Feature 5</ul>
               </li>
+              <div className="flex justify-center">
+              <button onClick={toggleDialog4} className='bg-[#094074] text-cyan-400 border-2 border-solid border-yellow-400 rounded-lg px-2 py-1'>Close</button>
+              </div>
             </dialog>
+            </div>
           )}
           <div className="flex items-center justify-center py-4 gap-4">
             <SiJavascript className='text-3xl text-yellow-400'/>
