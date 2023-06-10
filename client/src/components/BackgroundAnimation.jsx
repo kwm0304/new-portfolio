@@ -1,7 +1,7 @@
 import me from '../assets/me.jpg'
 import { SiJavascript, SiExpress, SiReact, SiNodedotjs, SiMongodb, SiGraphql, SiApollographql, SiHandlebarsdotjs, SiTailwindcss, SiBootstrap, SiMysql  } from 'react-icons/si'
 import { TbBrandNextjs } from 'react-icons/tb'
-import { BsThreeDots } from 'react-icons/bs'
+import { BsRocket } from 'react-icons/bs'
 import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai'
 import mckhome from '../assets/mckhome.png'
 import mck2 from '../assets/mck2.png'
@@ -17,7 +17,8 @@ import sfc3 from '../assets/sfc3.png'
 import { BsStripe } from 'react-icons/bs'
 import Resume from './Resume'
 import Footer from './Footer'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { set } from 'mongoose'
 
 const BackgroundAnimation = () => { 
   const [showDialog1, setShowDialog1] = useState(false);
@@ -28,6 +29,22 @@ const BackgroundAnimation = () => {
   const  [currentIndex2, setCurrentIndex2] = useState(0);
   const  [currentIndex3, setCurrentIndex3] = useState(0);
   const  [currentIndex4, setCurrentIndex4] = useState(0);
+  const [showRocket, setShowRocket] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  const handleScroll = () => {
+    if (window.pageYOffset > 300) {
+      setShowRocket(true)
+    } else {
+      setShowRocket(false)
+    }
+  }
 
   const slides1 = [mckhome, mck2, mck3]
   const slides2 = [shop, shop2, shop4]
@@ -48,6 +65,19 @@ const BackgroundAnimation = () => {
   const toggleDialog2 = () => setShowDialog2(!showDialog2);
   const toggleDialog3 = () => setShowDialog3(!showDialog3);
   const toggleDialog4 = () => setShowDialog4(!showDialog4);
+
+  const scrollToTop = () => {
+    const rocket = document.getElementById('rocket');
+    rocket.classList.add('animate-spin');
+    setTimeout(() => {
+      rocket.classList.add('animate-rocket');
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        rocket.classList.remove('animate-rocket');
+        rocket.classList.remove('animate-spin');
+      }, 1000);
+    }, 500);
+  };
 
 return(
   
@@ -399,6 +429,14 @@ return(
     <div>
     <Resume />
     </div>
+    <button
+      className={`${
+        showRocket ? 'block' : 'hidden'
+      } fixed bottom-4 right-4 text-5xl text-white px-4 py-2 rounded-lg transition-opacity duration-300`}
+      onClick={scrollToTop}
+    >
+      <BsRocket id="rocket" className="text-red-500 hover:text-yellow-400 active:text-yellow-400" />
+    </button>
     <Footer />
     </div>
     <svg
