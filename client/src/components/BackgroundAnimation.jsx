@@ -106,7 +106,7 @@ return(
     <div className="grid w-1/2 divide-x-2 divide-solid divide-yellow-400 xs:grid-cols-2 xs:text-center xs:w-[90%] xs:mx-auto xs:border-4 xs:justify-self-center grid-cols-1 mx-auto justify-center items-center border-8 gap-y-8 border-red-500 rounded-lg mx-12 bg-cyan-600 bg-opacity-50 py-6">
       
         
-        <div className="flex items-center justify-center gap-4 text-yellow-400 xs:flex-col sm:flex-col md:flex-col lg:flex-row">
+        <div className="flex items-center justify-center gap-4 text-yellow-400 xs:flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-row">
           <h4 className='text-red-500 text-2xl pr-6 font-bold'>Front End</h4>
           <div className="flex flex-col items-center text-center">
           <SiJavascript className='text-4xl '/>
@@ -133,7 +133,7 @@ return(
           <p className='text-cyan-400'>Next</p>
           </div>
         </div>
-        <div className="flex items-center justify-center gap-4 text-yellow-400 xs:flex-col sm:flex-col md:flex-col lg:flex-row md:mx-4">
+        <div className="flex items-center justify-center gap-4 text-yellow-400 xs:flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-row md:mx-4">
         <h4 className='text-red-500 text-2xl pr-8 font-bold'>Back End</h4>
         <div className="flex flex-col items-center text-center">
         <SiNodedotjs className='text-4xl'/>
