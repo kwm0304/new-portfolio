@@ -220,7 +220,7 @@ return(
                 <li>- Still todo: 1) Push weekly mileage and expense reports to quickbooks. 2) Invoice generation. 3) Make into a pwa</li>
               </ul>
               <div className="flex justify-center self-end mt-auto">
-              <button onClick={toggleDialog1} className='hover:scale-110 bg-[#094074] text-cyan-400 border-2 font-semibold uppercase border-solid border-yellow-400 rounded-lg px-2 py-1'>Close</button>
+              <button onClick={toggleDialog1} className='self-end hover:scale-110 bg-[#094074] text-cyan-400 border-2 font-semibold uppercase border-solid border-yellow-400 rounded-lg px-2 py-1'>Close</button>
               </div>
             </dialog>
             </div>
@@ -274,9 +274,11 @@ return(
             <div className="fixed inset-0 flex items-center justify-center z-50">
               <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
             <dialog open className='dialog w-[50vw] h-[60vh]'>
-              <h2 className='text-center text-red-500 font-bold text-2xl border-b-4 border-solid border-yellow-400'>Summary2</h2>
+              <div className="flex justify-center  ">
+              <h2 className='text-center text-red-500 font-bold text-2xl'>Summary2</h2>
+              </div>
               <p className='py-12 mx-12'>This e-commerce app uses Stripe for payments and GraphQL and Apollo for queries and mutations. It has auth and tracks the users past order history and can sort the items by category. </p>
-              <h2 className='text-center text-red-500 font-bold text-2xl border-b-4 border-solid border-yellow-400'>Features</h2>
+              <h2 className='text-center text-red-500 font-bold text-2xl'>Features</h2>
               <ul className='list-none py-12 mx-12'>
                 <li>- Auth using bcrypt and jwt</li>
                 <li>- Tracks user's order history</li>
@@ -284,8 +286,8 @@ return(
                 <li>- Products have categories, and the stock for each is dynamically updated</li>
                 
               </ul>
-              <div className="flex justify-center">
-              <button onClick={toggleDialog2} className='uppercase font-semibold bg-[#094074] text-cyan-400 border-2 border-solid border-yellow-400 rounded-lg px-2 py-1'>Close</button>
+              <div className="flex justify-center items-end mt-auto">
+              <button onClick={toggleDialog2} className='self-end uppercase font-semibold bg-[#094074] text-cyan-400 border-2 border-solid border-yellow-400 rounded-lg px-2 py-1'>Close</button>
               </div>
             </dialog>
             </div>
@@ -341,9 +343,9 @@ return(
             <div className="fixed inset-0 flex items-center justify-center z-50">
               <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
             <dialog open className='dialog w-[50vw] h-[60vh]'>
-              <h2 className='text-center text-red-500 font-bold text-2xl border-b-4 border-solid border-yellow-400'>Summary3</h2>
+              <h2 className='text-center text-red-500 font-bold text-2xl'>Summary3</h2>
               <p className='mx-12 py-12'>Web app that fetches and maps side effects from medicines and combines the results when entering more than one medication. I developed this for my grandfather who is in his 80's and has been in a cycle of treating symptoms of his current medication with more doctor's visits and medicine. It requires the formal name of the medication and if a generic name is entered, it will redirect the user to the suggested name.</p>
-              <h2 className='text-center text-red-500 font-bold text-2xl border-b-4 border-solid border-yellow-400'>Features</h2>
+              <h2 className='text-center text-red-500 font-bold text-2xl'>Features</h2>
               <ul className='mx-12 py-12'>
               <li>- Fetches and maps multiple inputs</li>
               <li>- Error handling</li>
@@ -399,9 +401,9 @@ return(
             <div className="fixed inset-0 flex items-center justify-center z-50">
               <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
             <dialog open className='dialog w-[50vw] h-[60vh]'>
-              <h2 className='text-center text-red-500 font-bold text-2xl border-b-4 border-solid border-yellow-400'>Summary</h2>
+              <h2 className='text-center text-red-500 font-bold text-2xl'>Summary</h2>
               <p className='mx-12 py-12'>This is the first live site I made and is for a mission trip to El Salvador that I will be attending this year. It uses Stripe for payment processing and tailwind for responsive styling.</p>
-              <h2 className='text-center text-red-500 font-bold text-2xl border-b-4 border-solid border-yellow-400 '>Features</h2>
+              <h2 className='text-center text-red-500 font-bold text-2xl'>Features</h2>
               <ul className='decoration-none mx-12 py-12'>
                 <li>- Uses a cool scroll trigger library for animated stats</li>
                 <li>- Set up Stripe checkout session to provide record keeping and receipts adherernt to 501c3 requirements.</li>
