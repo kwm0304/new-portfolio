@@ -106,7 +106,7 @@ return(
     <div className="grid w-1/2 divide-x-2 divide-solid divide-yellow-400 xs:grid-cols-2 xs:text-center xs:w-[90%] xs:mx-auto xs:border-4 xs:justify-self-center grid-cols-1 mx-auto justify-center items-center border-8 gap-y-8 border-red-500 rounded-lg mx-12 bg-cyan-600 bg-opacity-50 py-6">
       
         
-        <div className="flex items-center justify-center gap-4 text-yellow-400 xs:flex-col sm:flex-row">
+        <div className="flex items-center justify-center gap-4 text-yellow-400 xs:flex-col sm:flex-col md:flex-col lg:flex-row">
           <h4 className='text-red-500 text-2xl pr-6 font-bold'>Front End</h4>
           <div className="flex flex-col items-center text-center">
           <SiJavascript className='text-4xl '/>
@@ -133,7 +133,7 @@ return(
           <p className='text-cyan-400'>Next</p>
           </div>
         </div>
-        <div className="flex items-center justify-center gap-4 text-yellow-400 xs:flex-col sm:flex-row md:mx-4">
+        <div className="flex items-center justify-center gap-4 text-yellow-400 xs:flex-col sm:flex-col md:flex-col lg:flex-row md:mx-4">
         <h4 className='text-red-500 text-2xl pr-8 font-bold'>Back End</h4>
         <div className="flex flex-col items-center text-center">
         <SiNodedotjs className='text-4xl'/>
@@ -205,14 +205,14 @@ return(
           {showDialog1 && (
             <div className="fixed inset-0 flex items-center justify-center z-50">
               <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
-            <dialog open className='dialog w-[50vw] h-[60vh]'>
+            <dialog open className='dialog w-[50vw] h-[60vh] xs:w-[100%] xs:h-[90%] '>
               
               <h2 className='text-center text-red-500 font-bold text-2xl'>Summary</h2>
-              <p className='mx-12 py-12'>This is an event and finance tracker I'm making for my dad's furniture delivery business in the hopes of making his day-to-day a little less frustating and to make his record keeping easier.<br/>
+              <p className='mx-12 py-12 xs:mx-0 xs:py-2'>This is an event and finance tracker I'm making for my dad's furniture delivery business in the hopes of making his day-to-day a little less frustating and to make his record keeping easier.<br/>
               It has a calendar, phonebook, finance tracker, mileage tracker and analytics section. Has authentication using jwt and bcrypt. This was designed with a mobile-first approach and is currently being developed as a PWA.</p>
               
               <h2 className='text-center text-red-500 font-bold text-2xl'>Features</h2>
-              <ul className='list-none py-12 mx-12'>
+              <ul className='list-none py-12 mx-12 xs:mx-0 xs:py-2'>
                 <li>- Event scheduler through FullCalendar library. </li>
                 <li>- Phonebook that translates relevant contacts to event cards.</li>
                 <li>- Finances section that displays day/week/month/year revenues and expenses.</li>
@@ -273,7 +273,7 @@ return(
           {showDialog2 && (
             <div className="fixed inset-0 flex items-center justify-center z-50">
               <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
-            <dialog open className='dialog w-[50vw] h-[60vh]'>
+            <dialog open className='dialog w-[50vw] h-[60vh] xs:w-[100vw] xs:[90vh]'>
               <div className="flex justify-center  ">
               <h2 className='text-center text-red-500 font-bold text-2xl'>Summary2</h2>
               </div>
@@ -342,7 +342,7 @@ return(
           {showDialog3 && (
             <div className="fixed inset-0 flex items-center justify-center z-50">
               <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
-            <dialog open className='dialog w-[50vw] h-[60vh]'>
+            <dialog open className='dialog w-[50vw] h-[60vh] xs:w-[100vw] xs:[90vh]'>
               <h2 className='text-center text-red-500 font-bold text-2xl'>Summary3</h2>
               <p className='mx-12 py-12'>Web app that fetches and maps side effects from medicines and combines the results when entering more than one medication. I developed this for my grandfather who is in his 80's and has been in a cycle of treating symptoms of his current medication with more doctor's visits and medicine. It requires the formal name of the medication and if a generic name is entered, it will redirect the user to the suggested name.</p>
               <h2 className='text-center text-red-500 font-bold text-2xl'>Features</h2>
@@ -400,7 +400,7 @@ return(
           {showDialog4 && (
             <div className="fixed inset-0 flex items-center justify-center z-50">
               <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
-            <dialog open className='dialog w-[50vw] h-[60vh]'>
+            <dialog open className='dialog w-[50vw] h-[60vh] xs:w-[100vw] xs:[90vh]'>
               <h2 className='text-center text-red-500 font-bold text-2xl'>Summary</h2>
               <p className='mx-12 py-12'>This is the first live site I made and is for a mission trip to El Salvador that I will be attending this year. It uses Stripe for payment processing and tailwind for responsive styling.</p>
               <h2 className='text-center text-red-500 font-bold text-2xl'>Features</h2>
