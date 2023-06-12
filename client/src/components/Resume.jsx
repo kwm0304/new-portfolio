@@ -18,7 +18,7 @@ const Resume = ( ) => {
       <div className="flex justify-center py-4 text-3xl">
       <a className='text-cyan-400 hover:text-red-500 hover:border-b-4 hover:border-solid hover:border-yellow-400 hover:scale-110' href={Document} download='Resume.pdf'><FaDownload /></a>
       </div>
-      <div className="mx-auto  flex flex-col gap-8 pt-8 xs:w-full sm:w-full md:w-5/6 lg:w-3/4 xl:w-1/2">
+      <div className="mx-auto  flex flex-col  pt-8 xs:w-full sm:w-full md:w-5/6 lg:w-3/4 xl:w-1/2">
         <img src={resume} alt="resume" />
         <img src={resume2} alt="resume2" />
       </div>

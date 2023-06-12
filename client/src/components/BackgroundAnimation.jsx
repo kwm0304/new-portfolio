@@ -18,7 +18,6 @@ import { BsStripe } from 'react-icons/bs'
 import Resume from './Resume'
 import Footer from './Footer'
 import { useState, useEffect } from 'react'
-import { set } from 'mongoose'
 
 const BackgroundAnimation = () => { 
   const [showDialog1, setShowDialog1] = useState(false);
@@ -163,8 +162,8 @@ return(
         </div>
       
     </div>
-    <div className="flex justify-center pb-6">
-    <h2 className="text-center text-3xl text-red-500 font-bold pt-32 border-b-8 border-solid border-yellow-400 w-32">Projects</h2>
+    <div className="flex justify-center pb-6 ">
+    <h2 className="text-center text-3xl text-red-500 font-bold pt-32 w-32">Projects</h2>
     </div>
     <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 pt-12 justify-center projects xs:grid-cols-1 xs:gap-y-8">
       <div className="flex flex-col gap-y-12 justify-self-center">
@@ -206,19 +205,22 @@ return(
           {showDialog1 && (
             <div className="fixed inset-0 flex items-center justify-center z-50">
               <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
-            <dialog open className='dialog w-[80vw] h-[80vh]'>
+            <dialog open className='dialog w-[50vw] h-[60vh]'>
+              
               <h2 className='text-center text-red-500 font-bold text-2xl'>Summary</h2>
-              <p>this is a summary</p>
-              <h2>Features</h2>
-              <li>
-                <ul>Feature 1</ul>
-                <ul>Feature 2</ul>
-                <ul>Feature 3</ul>
-                <ul>Feature 4</ul>
-                <ul>Feature 5</ul>
-              </li>
-              <div className="flex justify-center">
-              <button onClick={toggleDialog1} className='bg-[#094074] text-cyan-400 border-2 border-solid border-yellow-400 rounded-lg px-2 py-1'>Close</button>
+              <p className='mx-12 py-12'>This is an event and finance tracker I'm making for my dad's furniture delivery business in the hopes of making his day-to-day a little less frustating and to make his record keeping easier.<br/>
+              It has a calendar, phonebook, finance tracker, mileage tracker and analytics section. Has authentication using jwt and bcrypt. This was designed with a mobile-first approach and is currently being developed as a PWA.</p>
+              
+              <h2 className='text-center text-red-500 font-bold text-2xl'>Features</h2>
+              <ul className='list-none py-12 mx-12'>
+                <li>- Event scheduler through FullCalendar library. </li>
+                <li>- Phonebook that translates relevant contacts to event cards.</li>
+                <li>- Finances section that displays day/week/month/year revenues and expenses.</li>
+                <li>- Analytics section that displays financial data in pie charts. Will soon display best customers, cost/labor analysis,costs per mile.</li>
+                <li>- Still todo: 1) Push weekly mileage and expense reports to quickbooks. 2) Invoice generation. 3) Make into a pwa</li>
+              </ul>
+              <div className="flex justify-center self-end mt-auto">
+              <button onClick={toggleDialog1} className='hover:scale-110 bg-[#094074] text-cyan-400 border-2 font-semibold uppercase border-solid border-yellow-400 rounded-lg px-2 py-1'>Close</button>
               </div>
             </dialog>
             </div>
@@ -271,19 +273,19 @@ return(
           {showDialog2 && (
             <div className="fixed inset-0 flex items-center justify-center z-50">
               <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
-            <dialog open className='dialog w-[80vw] h-[80vh]'>
-              <h2 className='text-center text-red-500 font-bold text-2xl'>Summary2</h2>
-              <p>this is a summary</p>
-              <h2>Features</h2>
-              <li>
-                <ul>Feature 1</ul>
-                <ul>Feature 2</ul>
-                <ul>Feature 3</ul>
-                <ul>Feature 4</ul>
-                <ul>Feature 5</ul>
-              </li>
+            <dialog open className='dialog w-[50vw] h-[60vh]'>
+              <h2 className='text-center text-red-500 font-bold text-2xl border-b-4 border-solid border-yellow-400'>Summary2</h2>
+              <p className='py-12 mx-12'>This e-commerce app uses Stripe for payments and GraphQL and Apollo for queries and mutations. It has auth and tracks the users past order history and can sort the items by category. </p>
+              <h2 className='text-center text-red-500 font-bold text-2xl border-b-4 border-solid border-yellow-400'>Features</h2>
+              <ul className='list-none py-12 mx-12'>
+                <li>- Auth using bcrypt and jwt</li>
+                <li>- Tracks user's order history</li>
+                <li>- Uses Stripe for payment processing</li>
+                <li>- Products have categories, and the stock for each is dynamically updated</li>
+                
+              </ul>
               <div className="flex justify-center">
-              <button onClick={toggleDialog2} className='bg-[#094074] text-cyan-400 border-2 border-solid border-yellow-400 rounded-lg px-2 py-1'>Close</button>
+              <button onClick={toggleDialog2} className='uppercase font-semibold bg-[#094074] text-cyan-400 border-2 border-solid border-yellow-400 rounded-lg px-2 py-1'>Close</button>
               </div>
             </dialog>
             </div>
@@ -306,7 +308,7 @@ return(
         <button
         className='text-yellow-400 text-3xl'
           onClick={() =>
-            navigateSlide(-1, currentIndex3, setCurrentIndex3, slides3)
+            navigateSlide(-1, currentIndex3, setCurrentliIndex3, slides3)
           }
         >
           <AiFillCaretLeft />
@@ -338,19 +340,16 @@ return(
           {showDialog3 && (
             <div className="fixed inset-0 flex items-center justify-center z-50">
               <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
-            <dialog open className='dialog w-[80vw] h-[80vh]'>
-              <h2 className='text-center text-red-500 font-bold text-2xl'>Summary3</h2>
-              <p>this is a summary</p>
-              <h2>Features</h2>
-              <li>
-                <ul>Feature 1</ul>
-                <ul>Feature 2</ul>
-                <ul>Feature 3</ul>
-                <ul>Feature 4</ul>
-                <ul>Feature 5</ul>
-              </li>
+            <dialog open className='dialog w-[50vw] h-[60vh]'>
+              <h2 className='text-center text-red-500 font-bold text-2xl border-b-4 border-solid border-yellow-400'>Summary3</h2>
+              <p className='mx-12 py-12'>Web app that fetches and maps side effects from medicines and combines the results when entering more than one medication. I developed this for my grandfather who is in his 80's and has been in a cycle of treating symptoms of his current medication with more doctor's visits and medicine. It requires the formal name of the medication and if a generic name is entered, it will redirect the user to the suggested name.</p>
+              <h2 className='text-center text-red-500 font-bold text-2xl border-b-4 border-solid border-yellow-400'>Features</h2>
+              <ul className='mx-12 py-12'>
+              <li>- Fetches and maps multiple inputs</li>
+              <li>- Error handling</li>
+              </ul>
               <div className="flex justify-center">
-              <button onClick={toggleDialog3} className='bg-[#094074] text-cyan-400 border-2 border-solid border-yellow-400 rounded-lg px-2 py-1'>Close</button>
+              <button onClick={toggleDialog3} className='hover:scale-110 uppercase font-semibold bg-[#094074] text-cyan-400 border-2 border-solid border-yellow-400 rounded-lg px-2 py-1'>Close</button>
               </div>
             </dialog>
             </div>
@@ -399,19 +398,17 @@ return(
           {showDialog4 && (
             <div className="fixed inset-0 flex items-center justify-center z-50">
               <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
-            <dialog open className='dialog w-[80vw] h-[80vh]'>
-              <h2 className='text-center text-red-500 font-bold text-2xl'>Summary4</h2>
-              <p>this is a summary</p>
-              <h2>Features</h2>
-              <li className='decoration-none'>
-                <ul>Feature 1</ul>
-                <ul>Feature 2</ul>
-                <ul>Feature 3</ul>
-                <ul>Feature 4</ul>
-                <ul>Feature 5</ul>
-              </li>
+            <dialog open className='dialog w-[50vw] h-[60vh]'>
+              <h2 className='text-center text-red-500 font-bold text-2xl border-b-4 border-solid border-yellow-400'>Summary</h2>
+              <p className='mx-12 py-12'>This is the first live site I made and is for a mission trip to El Salvador that I will be attending this year. It uses Stripe for payment processing and tailwind for responsive styling.</p>
+              <h2 className='text-center text-red-500 font-bold text-2xl border-b-4 border-solid border-yellow-400 '>Features</h2>
+              <ul className='decoration-none mx-12 py-12'>
+                <li>- Uses a cool scroll trigger library for animated stats</li>
+                <li>- Set up Stripe checkout session to provide record keeping and receipts adherernt to 501c3 requirements.</li>
+                <li>- Fun oppurtunity to implement some custom components like a carousel and responsive hamburger menu.</li>
+              </ul>
               <div className="flex justify-center">
-              <button onClick={toggleDialog4} className='bg-[#094074] text-cyan-400 border-2 border-solid border-yellow-400 rounded-lg px-2 py-1'>Close</button>
+              <button onClick={toggleDialog4} className='uppercase font-semibold bg-[#094074] text-cyan-400 border-2 border-solid border-yellow-400 rounded-lg px-2 py-1'>Close</button>
               </div>
             </dialog>
             </div>
