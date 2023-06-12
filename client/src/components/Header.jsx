@@ -17,13 +17,13 @@ const Header = () => {
       <nav className=" lg:block">
       <ul className="flex space-x-4 text-cyan-400 text-xl font-semibold">
   <li className="transition-all duration-300 ease-in-out transform hover:text-red-500 hover:scale-110">
-    <a href="/about">About</a>
+    <a href="#about">About</a>
   </li>
   <li className="transition-all duration-300 ease-in-out transform hover:text-red-500 hover:scale-110">
-    <a href="/projects">Projects</a>
+    <a href="#projects">Projects</a>
   </li>
   <li className="transition-all duration-300 ease-in-out transform hover:text-red-500 hover:scale-110">
-    <a href="/resume">Resume</a>
+    <a href="#resume">Resume</a>
   </li>
 </ul>
 

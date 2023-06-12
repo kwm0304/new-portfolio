@@ -85,7 +85,7 @@ return(
   <div className="relative">
     <div className='absolute left-0 top-0 z-10'>
       
-      <h2 className="text-5xl font-bold mb-4 text-center mt-12 text-red-500 mx-4">Hi, I'm Kenan McKenzie</h2>
+      <h2 className="text-5xl font-bold mb-4 text-center mt-12 text-red-500 mx-4" id='about'>Hi, I'm Kenan McKenzie</h2>
       <section className="p-8 text-center place-content-center text-center self-center">
         
       <p className="mb-4 text-cyan-400 xs:mx-0  lg:mx-24 xl:mx-24 font-semibold leading-10 xs:leading-6 xl:leading-10 lg:leading-10">
@@ -163,7 +163,7 @@ return(
       
     </div>
     <div className="flex justify-center pb-6 ">
-    <h2 className="text-center text-3xl text-red-500 font-bold pt-32 w-32">Projects</h2>
+    <h2 className="text-center text-3xl text-red-500 font-bold pt-32 w-32" id='projects'>Projects</h2>
     </div>
     <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 pt-12 justify-center projects xs:grid-cols-1 xs:gap-y-8">
       <div className="flex flex-col gap-y-12 justify-self-center">
@@ -205,7 +205,7 @@ return(
           {showDialog1 && (
             <div className="fixed inset-0 flex items-center justify-center z-50">
               <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
-            <dialog open className='dialog w-[50vw] h-[60vh] xs:w-[100%] xs:h-[90%] '>
+            <dialog open className='dialog w-[50vw] h-[80vh] xs:w-[100%] xs:h-[90%] '>
               
               <h2 className='text-center text-red-500 font-bold text-2xl'>Summary</h2>
               <p className='mx-12 py-12 xs:mx-0 xs:py-2'>This is an event and finance tracker I'm making for my dad's furniture delivery business in the hopes of making his day-to-day a little less frustating and to make his record keeping easier.<br/>
@@ -273,7 +273,7 @@ return(
           {showDialog2 && (
             <div className="fixed inset-0 flex items-center justify-center z-50">
               <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
-            <dialog open className='dialog w-[50vw] h-[60vh] xs:w-[100vw] xs:[90vh]'>
+            <dialog open className='dialog w-[50vw] h-[80vh] xs:w-[100vw] xs:[90vh]'>
               <div className="flex justify-center  ">
               <h2 className='text-center text-red-500 font-bold text-2xl'>Summary2</h2>
               </div>
@@ -342,7 +342,7 @@ return(
           {showDialog3 && (
             <div className="fixed inset-0 flex items-center justify-center z-50">
               <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
-            <dialog open className='dialog w-[50vw] h-[60vh] xs:w-[100vw] xs:[90vh]'>
+            <dialog open className='dialog w-[50vw] h-[80vh] xs:w-[100vw] xs:[90vh]'>
               <h2 className='text-center text-red-500 font-bold text-2xl'>Summary3</h2>
               <p className='mx-12 py-12'>Web app that fetches and maps side effects from medicines and combines the results when entering more than one medication. I developed this for my grandfather who is in his 80's and has been in a cycle of treating symptoms of his current medication with more doctor's visits and medicine. It requires the formal name of the medication and if a generic name is entered, it will redirect the user to the suggested name.</p>
               <h2 className='text-center text-red-500 font-bold text-2xl'>Features</h2>
@@ -400,7 +400,7 @@ return(
           {showDialog4 && (
             <div className="fixed inset-0 flex items-center justify-center z-50">
               <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
-            <dialog open className='dialog w-[50vw] h-[60vh] xs:w-[100vw] xs:[90vh]'>
+            <dialog open className='dialog w-[50vw] h-[80vh] xs:w-[100vw] xs:[90vh]'>
               <h2 className='text-center text-red-500 font-bold text-2xl'>Summary</h2>
               <p className='mx-12 py-12'>This is the first live site I made and is for a mission trip to El Salvador that I will be attending this year. It uses Stripe for payment processing and tailwind for responsive styling.</p>
               <h2 className='text-center text-red-500 font-bold text-2xl'>Features</h2>

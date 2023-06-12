@@ -10,7 +10,7 @@ const Resume = ( ) => {
 
   return (
     <>
-      <div className="flex justify-center">
+      <div className="flex justify-center" id='resume'>
         <h2 className="text-center pt-24 text-red-500 text-3xl font-bold border-b-8 border-solid border-yellow-400">
           Resume
         </h2>
