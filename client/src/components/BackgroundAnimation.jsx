@@ -273,9 +273,9 @@ return(
           {showDialog2 && (
             <div className="fixed inset-0 flex items-center justify-center z-50">
               <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
-            <dialog open className='dialog w-[50vw] h-[80vh] xs:w-[100vw] xs:[90vh]'>
+            <dialog open className='dialog w-[50vw] h-[80vh] xs:w-[100%] xs:h-[90%]'>
               <div className="flex justify-center  ">
-              <h2 className='text-center text-red-500 font-bold text-2xl'>Summary2</h2>
+              <h2 className='text-center text-red-500 font-bold text-2xl'>Summary</h2>
               </div>
               <p className='py-12 mx-12'>This e-commerce app uses Stripe for payments and GraphQL and Apollo for queries and mutations. It has auth and tracks the users past order history and can sort the items by category. </p>
               <h2 className='text-center text-red-500 font-bold text-2xl'>Features</h2>
@@ -310,7 +310,7 @@ return(
         <button
         className='text-yellow-400 text-3xl'
           onClick={() =>
-            navigateSlide(-1, currentIndex3, setCurrentliIndex3, slides3)
+            navigateSlide(-1, currentIndex3, setCurrentIndex3, slides3)
           }
         >
           <AiFillCaretLeft />
@@ -342,8 +342,8 @@ return(
           {showDialog3 && (
             <div className="fixed inset-0 flex items-center justify-center z-50">
               <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
-            <dialog open className='dialog w-[50vw] h-[80vh] xs:w-[100vw] xs:[90vh]'>
-              <h2 className='text-center text-red-500 font-bold text-2xl'>Summary3</h2>
+            <dialog open className='dialog w-[50vw] h-[80vh] xs:w-[100%] xs:h-[90%]'>
+              <h2 className='text-center text-red-500 font-bold text-2xl'>Summary</h2>
               <p className='mx-12 py-12'>Web app that fetches and maps side effects from medicines and combines the results when entering more than one medication. I developed this for my grandfather who is in his 80's and has been in a cycle of treating symptoms of his current medication with more doctor's visits and medicine. It requires the formal name of the medication and if a generic name is entered, it will redirect the user to the suggested name.</p>
               <h2 className='text-center text-red-500 font-bold text-2xl'>Features</h2>
               <ul className='mx-12 py-12'>
@@ -400,7 +400,7 @@ return(
           {showDialog4 && (
             <div className="fixed inset-0 flex items-center justify-center z-50">
               <div className="fixed inset-0 bg-gray-900 opacity-60"></div>
-            <dialog open className='dialog w-[50vw] h-[80vh] xs:w-[100vw] xs:[90vh]'>
+            <dialog open className='dialog w-[50vw] h-[80vh] xs:w-[100%] xs:h-[90%]'>
               <h2 className='text-center text-red-500 font-bold text-2xl'>Summary</h2>
               <p className='mx-12 py-12'>This is the first live site I made and is for a mission trip to El Salvador that I will be attending this year. It uses Stripe for payment processing and tailwind for responsive styling.</p>
               <h2 className='text-center text-red-500 font-bold text-2xl'>Features</h2>
