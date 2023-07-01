@@ -216,7 +216,8 @@ return(
                   <li>- Phonebook that translates relevant contacts to event cards.</li>
                   <li>- Finances section that displays day/week/month/year revenues and expenses.</li>
                   <li>- Analytics section that displays financial data in pie charts. Will soon display best customers, cost/labor analysis,costs per mile.</li>
-                  <li>- Still todo: 1) Push weekly mileage and expense reports to quickbooks. 2) Invoice generation. 3) Make into a pwa</li>
+                  <li>- Styling for iPhoneXR</li>
+                  <li>- Username: guest@guest.com Password: Password123!</li>
                 </ul>
                 <div className="flex justify-center mt-auto">
                 <button onClick={toggleDialog1} className='flex justify-center hover:scale-110 bg-[#094074] text-cyan-400 border-2 font-semibold uppercase border-solid border-yellow-400 rounded-lg px-2 py-1 '>Close</button>
