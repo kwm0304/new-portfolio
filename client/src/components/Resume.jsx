@@ -1,7 +1,6 @@
 import { FaDownload } from 'react-icons/fa';
-import resume from '../assets/resume.png';
-import resume2 from '../assets/resumetwo.png'
 import Document from '../assets/Resume.pdf'
+import ResumeImg from '../assets/ResumeImg.png'
 
 const Resume = ( ) => {
 
@@ -19,8 +18,7 @@ const Resume = ( ) => {
       <a className='text-cyan-400 hover:text-red-500 hover:border-b-4 hover:border-solid hover:border-yellow-400 hover:scale-110' href={Document} download='Resume.pdf'><FaDownload /></a>
       </div>
       <div className="mx-auto  flex flex-col  pt-8 xs:w-full sm:w-full md:w-5/6 lg:w-3/4 xl:w-1/2">
-        <img src={resume} alt="resume" />
-        <img src={resume2} alt="resume2" />
+        <img src={ResumeImg} alt="resume" />
       </div>
     </>
   );
