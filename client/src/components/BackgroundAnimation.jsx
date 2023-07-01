@@ -330,8 +330,8 @@ return(
           </div>
           
           <div className="flex text-cyan-400 font-bold text-center divide-x-2 divide-solid divide-yellow-400">
-          <a className='w-5/6' href='https://mcktransport.herokuapp.com/' target='_blank' rel='noreferrer'>VISIT</a>
-          <a className='w-5/6' href='https://github.com/kwm0304/transport' target='_blank' rel='noreferrer'>SOURCE</a>
+          <a className='w-5/6' href='https://kwm0304.github.io/sideEffects/' target='_blank' rel='noreferrer'>VISIT</a>
+          <a className='w-5/6' href='https://github.com/kwm0304/sideEffects' target='_blank' rel='noreferrer'>SOURCE</a>
           </div>
           <div className="flex justify-center pt-4">
           <button 
